@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Animation</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <img id = 'imga' src="" alt="">
+        <script>
+           
+            $('document').ready(function(){
+                var i = 1;
+                
+                function loadImage(q){
+                    var str = "" + q
+                    var pad = "000"
+                    var ans = pad.substring(0, pad.length - str.length) + str
+                    var t = document.getElementById('imga')
+                    t.src = './Resources/'+ans+'.jpg'
+                }
+                function rotateImage(){
+                    loadImage(i)
+                    i++
+                    if(i == 145)
+                        i = 1
+                }
+                
+                setInterval(rotateImage, '20');
+            })
+        </script>
+    </body>
+</html>
